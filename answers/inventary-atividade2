@@ -1,0 +1,13 @@
+[webserver_vars]
+auto_silent
+
+[ubuntu_vars]
+auto_silent
+
+[webserver]
+192.168.0.24
+192.168.0.25
+192.168.0.26
+
+[ubuntu]
+192.168.0.27

@@ -1,0 +1,18 @@
+---
+    - hosts: ubuntu
+    
+      tasks:
+      - name: "Start a container with a command"
+        community.general.docker_container:
+           name: sleepy
+           image: ubuntu:14.04
+           command: ["sleep", "infinity"]
+    
+    - hosts: webserver
+    
+      tasks:
+      - name: "Start a container with nginx"
+        community.general.docker_container:
+           name: nginx-web
+           image: nginx:latest
+           published_ports: "8080:80"
