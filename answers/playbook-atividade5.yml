@@ -1,0 +1,30 @@
+---
+
+    - hosts: banco
+    
+      tasks:
+      - name: "Start a container"
+        community.general.docker_container:
+           name: db
+           image: postgres:latest
+    
+      - name: "List containers"
+        command: docker ps
+        register: mycmd_out
+    
+      - debug: var=mycmd_out.stdout_lines
+    
+    - hosts: nginx
+    
+      tasks:
+      - name: "Start a container with Webserver"
+        community.general.docker_container:
+           name: nginx-web
+           image: nginx:latest
+           published_ports: "8081:80"
+    
+      - name: "List containers"
+        command: docker ps
+        register: mycmd_out
+    
+      - debug: var=mycmd_out.stdout_lines
