@@ -1,0 +1,16 @@
+---
+
+    - hosts: pwd
+    
+      tasks:
+      - name: "make file in remote host"
+        file:
+           path: /home/file_test.txt
+           state: touch
+           mode: "0644"
+    
+      - name: "make folder in remote host"
+        file:
+           path: /home/folder_test
+           state: directory
+           mode: "0755"
