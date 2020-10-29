@@ -1,0 +1,11 @@
+---
+- hosts: pwd
+  tasks:
+    - name: "Update cache apt"
+    command: apt-get update
+    when: ansible_os_family == "Debian"
+    
+    - name: "Update cache apk"
+    command: apk update
+    when: ansible_os_family == "Alpine"
+    
