@@ -1,0 +1,8 @@
+[pwd]
+192.168.0.24
+192.168.0.25
+192.168.0.25
+192.168.0.27
+
+[pwd:vars]
+ansible_python_interpreter=auto_silent
