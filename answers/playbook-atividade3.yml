@@ -1,0 +1,16 @@
+---
+
+    - hosts: pwd
+    
+      tasks:
+      - name: "Control host to remote host"
+        copy:
+           src: /home/file_test.txt
+           dest: /home/file_test.txt
+           
+           
+      - name: "Remote host to remote host"
+        copy:
+           src: /home/file_test.txt
+           dest: /home/file_test_copy.txt
+           remote_src: yes
